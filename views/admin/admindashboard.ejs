@@ -1,0 +1,60 @@
+<%- include('../header.ejs')  %>
+<div class="container" style="margin-bottom:260px">
+    <h1 class="text-center">Display Data</h1>
+    <div class="table-responsive">
+<table class="table  table-striped-columns display">
+    
+    <tr class="text-center">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile_Number</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Qualification</th>
+        <th>Course</th>
+        <th>Status</th>
+        <th>comment</th>
+        <th></th>
+        <th>Action</th>
+
+    </tr>
+    <% i=1%>
+    <% d.forEach((item)=>{ %>
+        <tr>
+        <td><%= i++%></td>
+        <td><%= item.name%></td>
+        <td><%= item.email%></td>
+        <td><%= item.number%></td>
+        <td><%= item.address%></td>
+        <td><%= item.gender%></td>
+        <td><%= item.qualification%></td>
+        <td><%= item.status%></td>
+        <td>
+            <form action="updateapprove/<%= item._id %>" method="post">
+              <textarea name="comment"></textarea>
+              
+            
+        </td>
+        <td>
+            <button class="btn btn-primary mb-2" type="submit" name="status" value="approved">Approved</button>
+            <button class="btn btn-primary" type="submit" name="status" value="approved">Rejected</button>
+        </form>
+        </td>
+        <td><%= item.course%></td>
+        <td>
+            <a href="/course_view/<%= item._id%>" class="btn btn-warning">view</a>
+            
+            <!-- <a href="/course_delete/<%= item._id%>" class="btn btn-danger">Delete</a>  -->
+            
+        </td>
+        </tr>
+        
+   <% }) %>
+ 
+    
+</table>
+</div>
+</div>
+
+<%- include('../footer.ejs')  %>

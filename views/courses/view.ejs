@@ -1,0 +1,32 @@
+<%- include('../header.ejs') %>
+<div class="container">
+<table class="table table-striped-columns display" style="margin-top:125px">
+    <tr class="text-center">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile_Number</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Qualification</th>
+        <th>Course</th>
+        
+    </tr>
+    
+        <tr>
+        <td><%= d._id%></td>
+        <td><%= d.name%></td>
+        <td><%= d.email%></td>
+        <td><%= d.number%></td>
+        <td><%= d.address%></td>
+        <td><%= d.gender%></td>
+        <td><%= d.qualification%></td>
+        <td><%= d.course%></td>
+        
+        </tr>
+  
+    
+</table>
+</div>
+
+<%- include('../footer.ejs') %>

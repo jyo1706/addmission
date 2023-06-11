@@ -1,0 +1,51 @@
+<%- include('../header.ejs')  %>
+<div class="container">
+    <h1 class="text-center">Display Data</h1>
+<table class="table table-striped-columns display">
+    <% if(message.length > 0){ %>
+        <div class="alert alert-success">
+        <%= message %>
+        </div>
+        <% } %>
+    <tr class="text-center">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile_Number</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Qualification</th>
+        <th>Course</th>
+        <th>Status</th>
+        <th>Comment</th>
+        <th>Action</th>
+
+    </tr>
+    <% d.forEach((item)=>{ %>
+        <tr>
+        <td><%= item._id%></td>
+        <td><%= item.name%></td>
+        <td><%= item.email%></td>
+        <td><%= item.number%></td>
+        <td><%= item.address%></td>
+        <td><%= item.gender%></td>
+        <td><%= item.qualification%></td>
+        <td><%= item.course%></td>
+        <td><%= item.status%></td>
+        <td><%= item.comment%></td>
+        
+        <td>
+            <a href="/course_view/<%= item._id%>" class="btn btn-warning">view</a>
+            <a href="/course_edit/<%= item._id%>"class="btn btn-success">Edit</a>  
+            <!-- <a href="/course_delete/<%= item._id%>" class="btn btn-danger">Delete</a>  -->
+            
+        </td>
+        </tr>
+        
+   <% }) %>
+ 
+    
+</table>
+</div>
+
+<%- include('../footer.ejs')  %>
